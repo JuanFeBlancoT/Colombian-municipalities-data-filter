@@ -29,7 +29,9 @@ namespace WpfApp1Test
 		{
 				InitializeComponent();
 
-				loadComboBox();
+			municipalities = new List<DataInfo>();
+
+			loadComboBox();
 		}
 
 
@@ -42,7 +44,7 @@ namespace WpfApp1Test
 			if (isContent == true)
 			{
 				string fileName = openFileDialog.FileName;
-				municipalities = new List<DataInfo>();
+				
 
 				using (StreamReader sr = new StreamReader(openFileDialog.FileName))
 				{
@@ -57,26 +59,29 @@ namespace WpfApp1Test
 							municipalities.Add(oneData);
 							MuniDataGrid.Items.Add(oneData);
 						}
-						catch (Exception ex)
+						catch (Exception)
 						{
 						}
 
 					}
+					Console.WriteLine("La lista tiene: " + municipalities.Count());
 				}
 			}
 		}
 
 		public int[] GetStatistics()
 		{
+
+			DataInfo[] arrayInfo = municipalities.ToArray();
 			int isle = 0, municipality = 0, nonNunicipality = 0;
-			for (int i = 0; i < MuniDataGrid.Items.Count; i++)
+			for (int i = 0; i < arrayInfo.Length; i++)
 			{
 				string type = municipalities[i].typeX;
-				if (type == "Isla")
+				if (type.Equals("Isla"))
 				{
 					isle++;
 				}
-				else if (type == "Municipio")
+				else if (type.Equals("Municipio"))
 				{
 					municipality++;
 				}
@@ -85,11 +90,11 @@ namespace WpfApp1Test
 					nonNunicipality++;
 				}
 			}
-			int[] results = new int[4];
-			results[0] = municipalities.Count;
-			results[1] = municipality;
-			results[2] = isle;
-			results[3] = nonNunicipality;
+			int[] results = new int[3];
+		
+			results[0] = municipality;
+			results[1] = isle;
+			results[2] = nonNunicipality;
 
 			return results;
 		}
@@ -128,7 +133,13 @@ namespace WpfApp1Test
 			FilterSelector.ItemsSource = listInitials;
 
 		}
-	}
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+			Window1 objectSecond = new Window1();
+			objectSecond.Show();	
+        }
+    }
 
 }
 

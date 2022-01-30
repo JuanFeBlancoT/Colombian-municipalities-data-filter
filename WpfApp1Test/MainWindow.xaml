@@ -22,6 +22,7 @@
         <ComboBox Name="FilterSelector" Text="Filtrar por inicial de municipio" HorizontalAlignment="Left" Margin="149,23,0,0" VerticalAlignment="Top" Width="231" Height="32" SelectionChanged="ComboBox_SelectionChanged">
 
         </ComboBox>
+        <Button Content="Análisis gráfico" HorizontalAlignment="Left" Margin="675,17,0,0" VerticalAlignment="Top" Click="Button_Click_1" Height="34" Width="102"/>
     </Grid>
 
 
