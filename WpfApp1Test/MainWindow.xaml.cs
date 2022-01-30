@@ -101,16 +101,17 @@ namespace WpfApp1Test
 
 				DataInfo[] arrayInfo = municipalities.ToArray();
 
-				//Get the current selected item from combobox as a string
-				string letterToFilter = FilterSelector.SelectionBoxItem.ToString();
+						//Get the current selected item from combobox as a string
+						//string letterToFilter = FilterSelector.SelectionBoxItem.ToString();
+						string letterToFilter = FilterSelector.SelectedItem.ToString();
 
-				//filter
-				DataInfo[] filtered = Array.FindAll(arrayInfo, x => x.IsInitial(letterToFilter));
+						//filter
+						DataInfo[] filtered = Array.FindAll(arrayInfo, x => x.IsInitial(letterToFilter));
+
 
 						MuniDataGrid.Items.Clear();
 
 						for (int i = 0; i < filtered.Length; i++) {
-								Console.WriteLine(i);
 								MuniDataGrid.Items.Add(filtered[i]);
 						}
 			}

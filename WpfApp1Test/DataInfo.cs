@@ -25,8 +25,15 @@ namespace WpfApp1Test
 
 		public bool IsInitial(string letter)
 		{
-			string actualInitial = depName.Substring(0,1);
-			return actualInitial.Equals(letter);
+						if (letter.Equals(" "))
+						{
+								return true;
+						}
+						else {
+								string actualInitial = depName.Substring(0, 1);
+								return actualInitial.Equals(letter);
+						}
+			
 		}
 
 		override
