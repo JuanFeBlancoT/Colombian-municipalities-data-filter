@@ -120,7 +120,7 @@ namespace WpfApp1Test
 		{
 			//Add all letters to list with ASCII
 			System.Collections.ObjectModel.ObservableCollection<Char> listInitials = new System.Collections.ObjectModel.ObservableCollection<Char>();
-			//listInitials.Add(' ');
+			listInitials.Add(' ');
 			for (int i = 65; i < 91; i++)
 			{
 				listInitials.Add((char)i);
