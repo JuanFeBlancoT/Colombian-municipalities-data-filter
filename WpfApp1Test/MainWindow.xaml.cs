@@ -37,22 +37,40 @@ namespace WpfApp1Test
 						if (isContent == true){
 								string fileName = openFileDialog.FileName;
 
-								ArrayList datasX = new ArrayList();
+								List<DataInfo> datasX = new List<DataInfo>();
 
 								DataGrid dataGrid = new DataGrid();
 								//dataGrid.Columns.Add(new DataGridTextColumn());
 
 								using (StreamReader sr = new StreamReader(openFileDialog.FileName)) {
-										while (!sr.EndOfStream) {
-												string x = sr.ReadLine();
-												string[] xInfo = x.Split(',');
-												DataInfo oneData = new DataInfo(xInfo[0], xInfo[1], xInfo[2], xInfo[3], xInfo[4]);
-												datasX.Add(oneData);
-										}
+										sr.ReadLine();
+									while (!sr.EndOfStream)
+									{
+										string x = sr.ReadLine();
+										string[] xInfo = x.Split(',');
+									try
+									{
+										DataInfo oneData = new DataInfo(xInfo[0], xInfo[1], xInfo[2], xInfo[3], xInfo[4]);
+										datasX.Add(oneData);
+									}
+									catch (Exception ex) { 
+									}
+										
+									}
 								}
 
-							
-						}
+								//Code for filtering according to the initial of the department, for 
+								//full implementation, pass the initial as the argument in the predicate of FindAll
+
+								DataInfo[] arrayInfo = datasX.ToArray();
+
+								DataInfo[] filtered = Array.FindAll(arrayInfo, x => x.IsInitial("V"));
+
+
+
+			}
 				}
+
+				
 		}
 }

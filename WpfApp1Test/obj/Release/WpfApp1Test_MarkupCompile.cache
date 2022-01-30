@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-C:\Users\vicen\Source\Repos\Colombian-municipalities-data-filter\WpfApp1Test\obj\Debug\
+C:\Users\vicen\Source\Repos\Colombian-municipalities-data-filter\WpfApp1Test\obj\Release\
 WpfApp1Test
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\vicen\Source\Repos\Colombian-municipalities-data-filter\WpfApp1Test\App.xaml
 1219584333
 
@@ -16,5 +16,5 @@ C:\Users\vicen\Source\Repos\Colombian-municipalities-data-filter\WpfApp1Test\App
 13-1310406943
 MainWindow.xaml;
 
-False
+True
 

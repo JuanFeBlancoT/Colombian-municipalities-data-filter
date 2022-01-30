@@ -6,20 +6,37 @@ using System.Threading.Tasks;
 
 namespace WpfApp1Test
 {
-		internal class DataInfo
-		{
-				public string depCode { get; set; }
-				public string munCode { get; set; }
-				public string depName { get; set; }
-				public string munName { get; set; }
-				public string typeX { get; set; }
+	internal class DataInfo
+	{
+		public string depCode { get; set; }
+		public string munCode { get; set; }
+		public string depName { get; set; }
+		public string munName { get; set; }
+		public string typeX { get; set; }
 
-				public DataInfo(string a, string b, string c, string d, string e) {
-						this.depCode = a;
-						this.munCode = b;
-						this.depName = c;
-						this.munName = d;
-						this.typeX = e; 
-				}
+		public DataInfo(string a, string b, string c, string d, string e)
+		{
+			this.depCode = a;
+			this.munCode = b;
+			this.depName = c;
+			this.munName = d;
+			this.typeX = e;
 		}
+
+		public bool IsInitial(string letter)
+		{
+			string actualInitial = depName.Substring(0,1);
+			Console.WriteLine(actualInitial);
+			return actualInitial.Equals(letter);
+		}
+
+		override
+		public string ToString() {
+
+			return "Municipio: " + munCode + "Depto: " + depName ;
+		}
+	}
+
 }
+
+
