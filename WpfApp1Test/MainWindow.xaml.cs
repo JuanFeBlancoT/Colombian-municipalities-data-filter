@@ -26,6 +26,8 @@ namespace WpfApp1Test
 				public MainWindow()
 				{
 						InitializeComponent();
+
+						loadComboBox();
 				}
 
 				private void Button_Click(object sender, RoutedEventArgs e)
@@ -66,9 +68,24 @@ namespace WpfApp1Test
 
 
 
-			}
+						}
 				}
 
-				
-		}
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+						
+        }
+
+				private void loadComboBox() {
+						//Add all letters to list with ASCII
+						System.Collections.ObjectModel.ObservableCollection<Char> listInitials = new System.Collections.ObjectModel.ObservableCollection<Char>();
+						listInitials.Add(' ');
+						for (int i = 65; i < 91; i++) {
+								listInitials.Add((char)i);
+						}
+
+						FilterSelector.ItemsSource=listInitials;
+
+				}
+    }
 }
