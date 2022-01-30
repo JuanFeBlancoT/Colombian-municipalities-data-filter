@@ -5,6 +5,11 @@
       "ProjectGuid": "9f47a580-fb40-44bc-a221-92b9597a10bb",
       "DisplayName": "WpfApp1Test",
       "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Archivos varios",
+      "ColorIndex": -1
     }
   },
   "NextColorIndex": 1
