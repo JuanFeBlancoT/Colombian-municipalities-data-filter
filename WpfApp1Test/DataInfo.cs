@@ -26,7 +26,6 @@ namespace WpfApp1Test
 		public bool IsInitial(string letter)
 		{
 			string actualInitial = depName.Substring(0,1);
-			Console.WriteLine(actualInitial);
 			return actualInitial.Equals(letter);
 		}
 

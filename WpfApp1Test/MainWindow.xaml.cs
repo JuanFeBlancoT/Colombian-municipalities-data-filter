@@ -59,6 +59,8 @@ namespace WpfApp1Test
 									}
 								}
 
+								dataGrid.ItemsSource = datasX;
+
 								//Code for filtering according to the initial of the department, for 
 								//full implementation, pass the initial as the argument in the predicate of FindAll
 
