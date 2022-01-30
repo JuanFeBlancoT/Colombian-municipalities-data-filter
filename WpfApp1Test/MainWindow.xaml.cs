@@ -24,10 +24,14 @@ namespace WpfApp1Test
 	public partial class MainWindow : Window
 	{
 		List<DataInfo> municipalities;
+
 		public MainWindow()
 		{
-			InitializeComponent();
+				InitializeComponent();
+
+				loadComboBox();
 		}
+
 
 		private void Button_Click(object sender, RoutedEventArgs e)
 		{
@@ -69,7 +73,6 @@ namespace WpfApp1Test
 
 				DataInfo[] filtered = Array.FindAll(arrayInfo, x => x.IsInitial("V"));
 
-
 			}
 		}
 
@@ -92,7 +95,6 @@ namespace WpfApp1Test
 					nonNunicipality++;
 				}
 			}
-
 			int[] results = new int[4];
 			results[0] = municipalities.Count;
 			results[1] = municipality;
@@ -102,5 +104,27 @@ namespace WpfApp1Test
 			return results;
 		}
 
+		private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+
+		}
+
+		private void loadComboBox()
+		{
+			//Add all letters to list with ASCII
+			System.Collections.ObjectModel.ObservableCollection<Char> listInitials = new System.Collections.ObjectModel.ObservableCollection<Char>();
+			listInitials.Add(' ');
+			for (int i = 65; i < 91; i++)
+			{
+				listInitials.Add((char)i);
+			}
+
+			FilterSelector.ItemsSource = listInitials;
+
+		}
 	}
+
 }
+
+
+
