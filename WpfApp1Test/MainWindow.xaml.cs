@@ -23,6 +23,7 @@ namespace WpfApp1Test
 		/// </summary>
 		public partial class MainWindow : Window
 		{
+
 				public MainWindow()
 				{
 						InitializeComponent();
@@ -58,25 +59,32 @@ namespace WpfApp1Test
 										
 									}
 								}
-
-								dataGrid.ItemsSource = datasX;
-
-								//Code for filtering according to the initial of the department, for 
-								//full implementation, pass the initial as the argument in the predicate of FindAll
-
-								DataInfo[] arrayInfo = datasX.ToArray();
-
-								DataInfo[] filtered = Array.FindAll(arrayInfo, x => x.IsInitial("V"));
-
-
-
+								
 						}
 				}
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-						
-        }
+						//Code for filtering according to the initial of the department, for 
+						//full implementation, pass the initial as the argument in the predicate of FindAll
+						List<DataInfo> datasX = new List<DataInfo>();
+
+						DataInfo[] arrayInfo = datasX.ToArray();
+						//get the string value of the current selected item
+						string letterToFilter = FilterSelector.SelectionBoxItem.ToString();
+
+						for (int i = 0; i<datasX.Count; i++) {
+								Console.WriteLine(datasX[i].munName+";***;"+letterToFilter);
+
+								if (datasX[i].IsInitial(letterToFilter)) {
+										Console.WriteLine("YEEEEES");
+								}
+						}
+
+						//DataInfo[] filtered = Array.FindAll(arrayInfo, x => x.IsInitial(letterToFilter));
+
+						//Console.WriteLine(filtered.Length);
+				}
 
 				private void loadComboBox() {
 						//Add all letters to list with ASCII
@@ -87,7 +95,6 @@ namespace WpfApp1Test
 						}
 
 						FilterSelector.ItemsSource=listInitials;
-
 				}
     }
 }
