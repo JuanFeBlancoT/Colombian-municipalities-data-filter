@@ -63,16 +63,6 @@ namespace WpfApp1Test
 
 					}
 				}
-
-
-
-				//Code for filtering according to the initial of the department, for 
-				//full implementation, pass the initial as the argument in the predicate of FindAll
-
-				DataInfo[] arrayInfo = municipalities.ToArray();
-
-				DataInfo[] filtered = Array.FindAll(arrayInfo, x => x.IsInitial("V"));
-
 			}
 		}
 
@@ -106,10 +96,26 @@ namespace WpfApp1Test
 
 		private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
+				//Code for filtering according to the initial of the department, for 
+				//full implementation, pass the initial as the argument in the predicate of FindAll
 
-		}
+				DataInfo[] arrayInfo = municipalities.ToArray();
 
-		private void loadComboBox()
+				//Get the current selected item from combobox as a string
+				string letterToFilter = FilterSelector.SelectionBoxItem.ToString();
+
+				//filter
+				DataInfo[] filtered = Array.FindAll(arrayInfo, x => x.IsInitial(letterToFilter));
+
+						MuniDataGrid.Items.Clear();
+
+						for (int i = 0; i < filtered.Length; i++) {
+								Console.WriteLine(i);
+								MuniDataGrid.Items.Add(filtered[i]);
+						}
+			}
+
+				private void loadComboBox()
 		{
 			//Add all letters to list with ASCII
 			System.Collections.ObjectModel.ObservableCollection<Char> listInitials = new System.Collections.ObjectModel.ObservableCollection<Char>();
