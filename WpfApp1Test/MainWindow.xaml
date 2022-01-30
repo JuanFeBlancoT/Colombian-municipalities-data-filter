@@ -6,6 +6,6 @@
         xmlns:local="clr-namespace:WpfApp1Test"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-	<Button Content="Import file" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="81" Height="29" Click="Button_Click"/>
+    <Button Content="Import file" Margin="38,10,644,0" VerticalAlignment="Top" Height="29" Click="Button_Click"/>
 
 </Window>
