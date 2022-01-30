@@ -6,6 +6,20 @@
         xmlns:local="clr-namespace:WpfApp1Test"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Button Content="Import file" Margin="38,10,644,0" VerticalAlignment="Top" Height="29" Click="Button_Click"/>
+    <Grid>
+        <Button Content="Import file" HorizontalAlignment="Left" Margin="10,23,0,0" VerticalAlignment="Top" Width="81" Height="32" Click="Button_Click"/>
+        <DataGrid x:Name="MuniDataGrid" HorizontalAlignment="Right" Margin="0,73,9.6,0" VerticalAlignment="Top" Width="774" Height="337">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Código departamento" Binding="{Binding depCode}" Width="*"/>
+                <DataGridTextColumn Header="Código municipio" Binding="{Binding munCode}" Width="*"/>
+                <DataGridTextColumn Header="Nombre departamento" Binding="{Binding depName}" Width="*"/>
+                <DataGridTextColumn Header="Nombre municipio" Binding="{Binding munName}" Width="*"/>
+                <DataGridTextColumn Header="Tipo" Binding="{Binding typeX}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+
+
 
 </Window>

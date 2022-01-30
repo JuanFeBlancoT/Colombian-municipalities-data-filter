@@ -39,11 +39,8 @@ namespace WpfApp1Test
 
 								List<DataInfo> datasX = new List<DataInfo>();
 
-								DataGrid dataGrid = new DataGrid();
-								//dataGrid.Columns.Add(new DataGridTextColumn());
-
 								using (StreamReader sr = new StreamReader(openFileDialog.FileName)) {
-										sr.ReadLine();
+									sr.ReadLine();
 									while (!sr.EndOfStream)
 									{
 										string x = sr.ReadLine();
@@ -52,6 +49,7 @@ namespace WpfApp1Test
 									{
 										DataInfo oneData = new DataInfo(xInfo[0], xInfo[1], xInfo[2], xInfo[3], xInfo[4]);
 										datasX.Add(oneData);
+                    MuniDataGrid.Items.Add(oneData);
 									}
 									catch (Exception ex) { 
 									}
