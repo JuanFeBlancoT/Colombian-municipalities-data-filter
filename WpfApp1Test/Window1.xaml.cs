@@ -20,16 +20,22 @@ namespace WpfApp1Test
     /// Interaction logic for Window1.xaml
     /// </summary>
     public partial class Window1 : Window
+
     {
+        int[] data = new int[3];
+
+        public void setData(int[] data) {
+            this.data = data;
+        }
+
         public Window1()
         {
             InitializeComponent();
 
-            MainWindow connection = new MainWindow();
+        }
 
-            int[] data = connection.GetStatistics();
-
-
+        public void loadChart()
+        {
             Func<ChartPoint, string> labelPoint = chartPoint =>
             string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
 
@@ -59,7 +65,8 @@ namespace WpfApp1Test
             },
 
         };
-
         }
     }
+
+    
 }

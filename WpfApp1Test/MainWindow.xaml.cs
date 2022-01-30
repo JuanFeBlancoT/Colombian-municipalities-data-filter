@@ -91,7 +91,7 @@ namespace WpfApp1Test
 				}
 			}
 			int[] results = new int[3];
-		
+
 			results[0] = municipality;
 			results[1] = isle;
 			results[2] = nonNunicipality;
@@ -138,7 +138,11 @@ namespace WpfApp1Test
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
 			Window1 objectSecond = new Window1();
-			objectSecond.Show();	
+			Console.WriteLine(GetStatistics()[0]);
+			objectSecond.setData(GetStatistics());
+			objectSecond.loadChart();
+			objectSecond.Show();
+			
         }
     }
 
