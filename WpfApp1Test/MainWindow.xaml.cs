@@ -35,7 +35,7 @@ namespace WpfApp1Test
 		}
 
 
-		private void Button_Click(object sender, RoutedEventArgs e)
+		private void importFile(object sender, RoutedEventArgs e)
 		{
 			OpenFileDialog openFileDialog = new OpenFileDialog();
 
@@ -64,7 +64,6 @@ namespace WpfApp1Test
 						}
 
 					}
-					Console.WriteLine("La lista tiene: " + municipalities.Count());
 				}
 			}
 		}
@@ -135,10 +134,9 @@ namespace WpfApp1Test
 
 		}
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void generateStatistics(object sender, RoutedEventArgs e)
         {
 			Window1 objectSecond = new Window1();
-			Console.WriteLine(GetStatistics()[0]);
 			objectSecond.setData(GetStatistics());
 			objectSecond.loadChart();
 			objectSecond.Show();

@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="Importar archivo" HorizontalAlignment="Left" Margin="10,23,0,0" VerticalAlignment="Top" Width="107" Height="32" Click="Button_Click"/>
+        <Button Content="Importar archivo" HorizontalAlignment="Left" Margin="10,23,0,0" VerticalAlignment="Top" Width="107" Height="32" Click="importFile"/>
 
         <DataGrid x:Name="MuniDataGrid" HorizontalAlignment="Right" Margin="0,73,9.6,0" VerticalAlignment="Top" Width="774" Height="337">
 
@@ -22,7 +22,7 @@
         <ComboBox Name="FilterSelector" Text=" " HorizontalAlignment="Left" Margin="149,23,0,0" VerticalAlignment="Top" Width="231" Height="32" SelectionChanged="ComboBox_SelectionChanged">
 
         </ComboBox>
-        <Button Content="Análisis gráfico" HorizontalAlignment="Left" Margin="675,17,0,0" VerticalAlignment="Top" Click="Button_Click_1" Height="34" Width="102"/>
+        <Button Content="Análisis gráfico" HorizontalAlignment="Left" Margin="675,17,0,0" VerticalAlignment="Top" Click="generateStatistics" Height="34" Width="102"/>
     </Grid>
 
 
