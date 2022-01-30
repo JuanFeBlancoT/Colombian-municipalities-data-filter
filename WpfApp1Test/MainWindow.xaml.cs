@@ -70,7 +70,7 @@ namespace WpfApp1Test
 				//full implementation, pass the initial as the argument in the predicate of FindAll
 
 				DataInfo[] arrayInfo = municipalities.ToArray();
-
+				
 				DataInfo[] filtered = Array.FindAll(arrayInfo, x => x.IsInitial("V"));
 
 			}
